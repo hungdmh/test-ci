@@ -9,7 +9,7 @@ gem 'sqlite3', '~> 1.4'
 gem 'puma', '~> 4.1'
 gem "rails_best_practices"
 gem "reek"
-gem 'rubocop', '~> 0.54.0', require: false
+gem 'rubocop', require: false
 gem "rspec-rails"
 gem "rubocop-checkstyle_formatter", require: false
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
