@@ -2,8 +2,8 @@
 
 Style/FrozenStringLiteralComment:
   Description: >-
-                 Add the frozen_string_literal comment to the top of files
-                 to help transition from Ruby 2.3.0 to Ruby 3.0.
+    Add the frozen_string_literal comment to the top of files
+    to help transition from Ruby 2.3.0 to Ruby 3.0.
   Enabled: false
 
 Style/InlineComment:
@@ -50,13 +50,13 @@ Metrics/CyclomaticComplexity:
   Description: "Avoid complex methods."
   Enabled: false
 
-Layout/AlignArray:
+Layout/ArrayAlignment:
   Description: >-
-                 Align the elements of an array literal if they span more than
-                 one line.
+    Align the elements of an array literal if they span more than
+    one line.
   Enabled: false
 
-Style/UnneededPercentQ:
+Style/RedundantPercentQ:
   Description: "Checks for %q/%Q when single quotes or double quotes would do."
   Enabled: false
 
