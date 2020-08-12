@@ -13,9 +13,10 @@ jobs:
           sudo chmod +x /usr/bin/framgia-ci
           sudo apt install python3-pip
           sudo apt install libcurl4-openssl-dev libssl-dev
-      - run: pip3 install framgia-ci
-      - run: pip3 uninstall cleo clikit
-      - run: pip
-      - run: pip3 install cleo==0.6.8
+      - run: |
+          pip install setuptools
+          pip3 install framgia-ci
+          pip3 uninstall cleo clikit
+          pip3 install cleo==0.6.8
       - name: Run CI
         run: framgia-ci run --local
