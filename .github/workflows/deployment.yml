@@ -17,7 +17,7 @@ jobs:
       - run: |
           yes | pip3 install wheel
           pip3 install framgia-ci
-          pip3 uninstall cleo clikit
-          pip3 install cleo==0.6.8
+          pip3 uninstall --yes cleo clikit
+          yes | pip3 install cleo==0.6.8
       - name: Run CI
-        run: framgia-ci run --local
+        run: framgia-ci run
