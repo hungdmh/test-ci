@@ -1,0 +1,15 @@
+name: Node.js CI
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: cd api
+      - run: pip3 install framgia-ci
+      - run: pip3 uninstall cleo clikit
+      - run: pip3 install cleo==0.6.8
+      - name: Run CI
+        run: framgia-ci run --local
