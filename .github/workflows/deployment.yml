@@ -8,18 +8,15 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: |
-          sudo curl -o /usr/bin/framgia-ci https://raw.githubusercontent.com/framgia/ci-report-tool/master/dist/framgia-ci
-          sudo chmod +x /usr/bin/framgia-ci
-          sudo apt install python3-pip
-          sudo apt install libcurl4-openssl-dev libssl-dev
-          sudo apt-get install -y python3-setuptools
-      - run: |
-          yes | pip3 install wheel
-          pip3 install framgia-ci
-          pip3 uninstall --yes cleo clikit
-          yes | pip3 install cleo==0.6.8
-      - name: Run CIII
-        run: |
           cd api
-          ls -la && pwd
-          framgia-ci run --local
+          sudo bundle install
+      - run: |
+          pwd
+      - name: Rubocop
+        run: cd api && bundle exec rubocop
+      - name: Rails Best Practices
+        run: cd api && bundle exec rails_best_practices -e "db/schema.rb,db/migrate,vendor,app/models/application_record.rb"
+      - name: Rpec
+        run: cd api && bundle exec rspec --format documentation
+      - name: reek
+        run: cd api && bundle exec reek
