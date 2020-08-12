@@ -18,7 +18,7 @@ jobs:
           pip3 install framgia-ci
           pip3 uninstall --yes cleo clikit
           yes | pip3 install cleo==0.6.8
-      - name: Run CI
+      - name: Run CIII
         run: |
           cd api
           ls -la && pwd
