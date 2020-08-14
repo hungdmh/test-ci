@@ -11,10 +11,10 @@ jobs:
         run: sudo gem install bundler:1.17.2
       - run: |
           cd api
-          gem install rubocop
-          gem install rails_best_practices
-          gem install rspec
-          gem install reek
+          sudo gem install rubocop
+          sudo gem install rails_best_practices
+          sudo gem install rspec
+          sudo gem install reek
           rubocop-rails
       - run: |
           pwd
