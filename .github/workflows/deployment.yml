@@ -15,7 +15,7 @@ jobs:
           sudo gem install rails_best_practices
           sudo gem install rspec
           sudo gem install reek
-          rubocop-rails
+          sudo gem install rubocop-rails
       - run: |
           pwd
       - name: Rubocop
