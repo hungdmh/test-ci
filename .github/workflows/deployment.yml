@@ -11,6 +11,7 @@ jobs:
         run: sudo gem install bundler:1.17.2
       - run: |
           cd api
+          sudo gem install rails
           sudo gem install rubocop
           sudo gem install rails_best_practices
           sudo gem install rspec
