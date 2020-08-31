@@ -8,6 +8,9 @@ require: rubocop-rails
 inherit_from:
   - .rubocop_enabled.yml
   - .rubocop_disabled.yml
+inherit_mode:
+  merge:
+    - Exclude
 
 # Common configuration.
 AllCops:
