@@ -19,7 +19,7 @@ AllCops:
     - "Gemfile"
   Exclude:
     - "vendor/**/*"
-    - vendor/bundle/**/*
+    - "vendor/bundle/**/*"
     - "config/unicorn.rb"
     - "bin/*"
     - "db/**/*"
@@ -32,9 +32,6 @@ AllCops:
     - ".idea/**/*"
     - "**/.DS_Store"
     - "**/.keep"
-  inherit_mode:
-    merge:
-      - Exclude
 
 # Indent private/protected/public as deep as method definitions
 Layout/AccessModifierIndentation:
