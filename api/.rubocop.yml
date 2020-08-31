@@ -31,9 +31,6 @@ AllCops:
     - ".idea/**/*"
     - "**/.DS_Store"
     - "**/.keep"
-  inherit_mode:
-    merge:
-      - Exclude
 
 # Indent private/protected/public as deep as method definitions
 Layout/AccessModifierIndentation:
