@@ -8,6 +8,7 @@ require: rubocop-rails
 inherit_from:
   - .rubocop_enabled.yml
   - .rubocop_disabled.yml
+
 inherit_mode:
   merge:
     - Exclude
@@ -21,8 +22,7 @@ AllCops:
     - "**/*.gemspec"
     - "Gemfile"
   Exclude:
-    - "vendor/**/*"
-    - "vendor/bundle/**/*"
+    - vendor/bundle/**/*
     - "config/unicorn.rb"
     - "bin/*"
     - "db/**/*"
