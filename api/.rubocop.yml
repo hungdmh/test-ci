@@ -9,10 +9,6 @@ inherit_from:
   - .rubocop_enabled.yml
   - .rubocop_disabled.yml
 
-inherit_mode:
-  merge:
-    - Exclude
-
 # Common configuration.
 AllCops:
   # Include gemspec and Rakefile
@@ -35,6 +31,9 @@ AllCops:
     - ".idea/**/*"
     - "**/.DS_Store"
     - "**/.keep"
+  inherit_mode:
+    merge:
+      - Exclude
 
 # Indent private/protected/public as deep as method definitions
 Layout/AccessModifierIndentation:
