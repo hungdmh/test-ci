@@ -10,14 +10,14 @@ jobs:
       - run: sudo gem install bundler:1.17.2
       - uses: actions/cache@v2
         with:
-          path: "./api/vendor/bundle"
+          path: api/vendor/bundle
           key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
           restore-keys: |
             ${{ runner.os }}-gems-
       - name: Install gemfilee
         run: |
           cd api
-          bundle config path ./api/vendor/bundle
+          bundle config path api/vendor/bundle
           bundle install
       - name: Rubocop
         run: cd api && bundle exec rubocop
