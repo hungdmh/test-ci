@@ -22,7 +22,7 @@ AllCops:
     - "**/*.gemspec"
     - "Gemfile"
   Exclude:
-    - vendor/bundle/**/*
+    # - vendor/bundle/**/*
     - "config/unicorn.rb"
     - "bin/*"
     - "db/**/*"
