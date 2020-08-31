@@ -13,24 +13,25 @@ inherit_from:
 AllCops:
   # Include gemspec and Rakefile
   Include:
-    - 'app/**/*'
-    - 'lib/**/*'
-    - '**/*.gemspec'
-    - 'Gemfile'
+    - "app/**/*"
+    - "lib/**/*"
+    - "**/*.gemspec"
+    - "Gemfile"
   Exclude:
-    - 'vendor/**/*'
-    - 'config/unicorn.rb'
-    - 'bin/*'
-    - 'db/**/*'
-    - 'spec/**/*'
-    - 'script/rails'
-    - 'config/**/*'
-    - 'app/views/**/*'
-    - 'app/assets/**/*'
-    - 'app/javascript/**/*'
-    - '.idea/**/*'
-    - '**/.DS_Store'
-    - '**/.keep'
+    - "vendor/**/*"
+    - "api/vendor/**/*"
+    - "config/unicorn.rb"
+    - "bin/*"
+    - "db/**/*"
+    - "spec/**/*"
+    - "script/rails"
+    - "config/**/*"
+    - "app/views/**/*"
+    - "app/assets/**/*"
+    - "app/javascript/**/*"
+    - ".idea/**/*"
+    - "**/.DS_Store"
+    - "**/.keep"
 
 # Indent private/protected/public as deep as method definitions
 Layout/AccessModifierIndentation:
@@ -40,7 +41,7 @@ Layout/AccessModifierIndentation:
     - indent
 
 # Align the elements of a hash literal if they span more than one line.
-Layout/AlignHash:
+Layout/HashAlignment:
   # Alignment of entries using hash rocket as separator. Valid values are:
   #
   # key - left alignment of keys
@@ -103,7 +104,7 @@ Layout/AlignHash:
     - ignore_implicit
     - ignore_explicit
 
-Layout/AlignParameters:
+Layout/ParameterAlignment:
   # Alignment of parameters in multi-line method calls.
   #
   # The `with_first_parameter` style aligns the following lines along the same column
@@ -129,12 +130,6 @@ Metrics/AbcSize:
   # The ABC size is a calculated magnitude, so this number can be a Fixnum or
   # a Float.
   Max: 20
-
-Style/BracesAroundHashParameters:
-  EnforcedStyle: no_braces
-  SupportedStyles:
-    - braces
-    - no_braces
 
 # Indentation of `when`.
 Layout/CaseIndentation:
@@ -172,7 +167,7 @@ Style/ClassCheck:
     - kind_of?
 
 Metrics/ClassLength:
-  CountComments: false  # count full line comments?
+  CountComments: false # count full line comments?
   Max: 100
 
 # Align with the style guide.
@@ -184,11 +179,11 @@ Style/CollectionMethods:
   #   PreferredMethods:
   #     find: detect
   PreferredMethods:
-    collect: 'map'
-    collect!: 'map!'
-    inject: 'reduce'
-    detect: 'find'
-    find_all: 'select'
+    collect: "map"
+    collect!: "map!"
+    inject: "reduce"
+    detect: "find"
+    find_all: "select"
 
 # Checks formatting of special comments
 Style/CommentAnnotation:
@@ -233,9 +228,9 @@ Layout/EmptyLinesAroundModuleBody:
 
 Naming/FileName:
   Exclude:
-    - '**/Rakefile'
-    - '**/Gemfile'
-    - '**/Capfile'
+    - "**/Rakefile"
+    - "**/Gemfile"
+    - "**/Capfile"
 
 # Checks use of for or each in multiline loops.
 Style/For:
@@ -268,7 +263,7 @@ Style/HashSyntax:
     - hash_rockets
 
 # Checks the indentation of the first key in a hash literal.
-Layout/IndentFirstHashElement:
+Layout/FirstHashElementIndentation:
   # The value `special_inside_parentheses` means that hash literals with braces
   # that have their opening brace on the same line as a surrounding opening
   # round parenthesis, shall have their first key indented relative to the
@@ -287,12 +282,11 @@ Style/LambdaCall:
     - call
     - braces
 
-Metrics/LineLength:
-  Max: 80
+Layout/LineLength:
+  Max: 120
   AllowURI: true
   Exclude:
     - config/routes.rb
-
 
 Style/Next:
   # With `always` all conditions at the end of an iteration needs to be
@@ -319,7 +313,7 @@ Style/MethodDefParentheses:
     - require_no_parentheses
 
 Metrics/MethodLength:
-  CountComments: false  # count full line comments?
+  CountComments: false # count full line comments?
   Max: 10
 
 Naming/MethodName:
@@ -341,18 +335,18 @@ Style/ParenthesesAroundCondition:
 
 Style/PercentLiteralDelimiters:
   PreferredDelimiters:
-    '%':  ()
-    '%i': ()
-    '%q': ()
-    '%Q': ()
-    '%r': '{}'
-    '%s': ()
-    '%w': ()
-    '%W': ()
-    '%x': ()
+    "%": ()
+    "%i": ()
+    "%q": ()
+    "%Q": ()
+    "%r": "{}"
+    "%s": ()
+    "%w": ()
+    "%W": ()
+    "%x": ()
 
 Naming/PredicateName:
-  NamePrefixBlacklist:
+  ForbiddenPrefixes:
     - get_
 
 Style/RaiseArgs:
@@ -360,7 +354,6 @@ Style/RaiseArgs:
   SupportedStyles:
     - compact # raise Exception.new(msg)
     - exploded # raise Exception, msg
-
 
 Style/RedundantReturn:
   # When true allows code like `return x, y`.
@@ -381,7 +374,6 @@ Style/SignalException:
     - only_raise
     - only_fail
     - semantic
-
 
 Style/SingleLineBlockParams:
   Methods:
@@ -430,7 +422,7 @@ Layout/SpaceInsideHashLiteralBraces:
     - space
     - no_space
 
-Layout/TrailingBlankLines:
+Layout/TrailingEmptyLines:
   EnforcedStyle: final_newline
   SupportedStyles:
     - final_newline
@@ -483,7 +475,7 @@ Style/TrivialAccessors:
   #
   # Commonly used in DSLs
   AllowDSLWriters: false
-  Whitelist:
+  AllowedMethods:
     - to_ary
     - to_a
     - to_c
